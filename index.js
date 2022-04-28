@@ -88,9 +88,7 @@ bot.action(/^sorteajuegos@/, (ctx) => {
        let texto = `[${e.name['#text']}](${url_game}${e['@_objectid']})`
 
        return ctx.editMessageText(`...y el ganador es...\n${texto}`, { parse_mode: 'Markdown' })
-    });
-
-    //
+    });    
 });
 
 bot.action('sorteajugador', async (ctx) => {
@@ -136,7 +134,7 @@ bot.command('ruleta', async (ctx) => {
 bot.launch({
   webhook: {
     domain: `https://rude-fox-31.loca.lt/`,
-    port: 3000
+    //port: 3000
   }
 }).then(() => {
   console.info(`The bot ${bot.botInfo.username} is running on server`);

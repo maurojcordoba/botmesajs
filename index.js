@@ -133,7 +133,7 @@ bot.command('ruleta', async (ctx) => {
 
 bot.launch({
   webhook: {
-    domain: 'https://botmesa-maurojcordoba.vercel.app/',
+    domain: 'https://botmesa.vercel.app/',
     //port: 3000
   }
 }).then(() => {

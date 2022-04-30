@@ -3,6 +3,7 @@ const { Telegraf, Markup } = require('telegraf');
 
 const axios = require('axios');
 const { XMLParser } = require('fast-xml-parser');
+const htmlent = require('html-entities');
 
 
 const users_bgg = ['maurocor', 'juankazon', 'maticepe', 'juanecasla', 'saga_kanon'];
@@ -77,7 +78,7 @@ export default async function webhook(req, res) {
             };
 
             const parser = new XMLParser(options);
-            let jObj = parser.parse(response.data);
+            let jObj = parser.parse(htmlent.decode(response.data));
             collection = jObj.items.item;
         }
 
@@ -140,7 +141,7 @@ export default async function webhook(req, res) {
             };
 
             const parser = new XMLParser(options);
-            let jObj = parser.parse(response.data);
+            let jObj = parser.parse(htmlent.decode(response.data));
             collection = jObj.items.item;
         }
 

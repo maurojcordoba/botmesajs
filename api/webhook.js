@@ -190,6 +190,31 @@ export default async function webhook(req, res) {
     })
 
 
+    bot.command('dolar', async (ctx) => {
+        let texto = '';                
+        
+        //oficial
+        const res = await axios.get('https://mercados.ambito.com/dolar/oficial/variacion');
+        
+        if (res.status == 200) {
+            texto += `<u><b>Dolar Oficial</b></u>\n`
+            texto += `<b>Compra:</b> $ ${res.data.compra} - <b>Venta:</b> $ ${res.data.venta}\n`;
+            texto += `<b>Fecha:</b> ${res.data.fecha}\n\n`;
+        } 
+    
+        //informal
+        const resinfo = await axios.get('https://mercados.ambito.com/dolar/informal/variacion');
+        
+        if (resinfo.status == 200) {
+            texto += `<u><b>Dolar Informal</b></u>\n`
+            texto += `<b>Compra:</b> $ ${resinfo.data.compra} - <b>Venta:</b> $ ${resinfo.data.venta}\n`;
+            texto += `<b>Fecha:</b> ${resinfo.data.fecha}\n`;
+        } 
+
+        return await ctx.reply(texto, { parse_mode: 'HTML' })
+    });
+
+
     
     // bot handles processed data from the event body    
     await bot.handleUpdate(req.body, res);

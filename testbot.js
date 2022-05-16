@@ -11,7 +11,7 @@ const users = ['juane', 'juank', 'matias', 'mauro', 'cristian'];
 const url_game = 'https://boardgamegeek.com/boardgame/';
 
 
-const bot = new Telegraf("5343806043:AAHw8VLVDjQceffLJfoqCxJBeXeo9eeqeiI");
+const bot = new Telegraf("---api-token-aqui-----");
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;

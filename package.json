@@ -15,7 +15,8 @@
     "dotenv": "^16.0.0",
     "fast-xml-parser": "^4.0.7",
     "html-entities": "^2.3.3",
-    "telegraf": "^4.7.0"
+    "telegraf": "^4.7.0",
+    "vercel": "^24.2.3"
   },
   "devDependencies": {
     "localtunnel": "^2.0.2"

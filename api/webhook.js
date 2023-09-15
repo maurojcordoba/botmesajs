@@ -154,42 +154,6 @@ export default async function webhook(req, res) {
 
     });
 
-
-
-
-
-
-
-
-    bot.command('dado', async (ctx) => {
-        const opts = {
-            'emoji': '🏀'
-        }
-        return await ctx.telegram.sendDice(ctx.chat.id, opts);
-    });
-
-    bot.command('basket', async (ctx) => {
-        const opts = {
-            'emoji': '🏀'
-        }
-        return await ctx.telegram.sendDice(ctx.chat.id, opts);
-    })
-
-    bot.command('futbol', async (ctx) => {
-        const opts = {
-            'emoji': '⚽'
-        }
-        return await ctx.telegram.sendDice(ctx.chat.id, opts);
-    })
-
-    bot.command('ruleta', async (ctx) => {
-        const opts = {
-            'emoji': '🎰'
-        }
-        return await ctx.telegram.sendDice(ctx.chat.id, opts);
-    })
-
-
     bot.command('dolar', async (ctx) => {
         let texto = '';                
         
@@ -213,8 +177,6 @@ export default async function webhook(req, res) {
 
         return await ctx.reply(texto, { parse_mode: 'HTML' })
     });
-
-
     
     // bot handles processed data from the event body    
     await bot.handleUpdate(req.body, res);

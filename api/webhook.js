@@ -66,7 +66,7 @@ export default async function webhook(req, res) {
         var texto = '';
         let arr = ctx.update.callback_query.data.split('@');
         let user = arr[1];
-        let url = `https://www.boardgamegeek.com/xmlapi/collection/${user}?own=1`;
+        let url = `https://boardgamegeek.com/xmlapi2/collection?username=${user}&own=1`;
         let collection = [];
 
         const response = await axios.get(url);
@@ -129,8 +129,8 @@ export default async function webhook(req, res) {
         if (arr[1] == '*') {
             user = users_bgg[Math.floor(Math.random() * users_bgg.length)]
         }
-
-        let url = `https://www.boardgamegeek.com/xmlapi/collection/${user}?own=1`;
+        
+        let url = `https://boardgamegeek.com/xmlapi2/collection?username=${user}&own=1`;
 
         const response = await axios.get(url);
 

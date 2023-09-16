@@ -44,7 +44,7 @@ export default async function webhook(req, res) {
             { columns: 1 }
         )
 
-        return ctx.reply(`Hola ${ctx.message.from.first_name}! ¿Que queres? 😁`, keyboard)
+        return ctx.reply(`Hola ${ctx.message.from.first_name}! 😁`, keyboard)
     });
    
 
@@ -84,7 +84,7 @@ export default async function webhook(req, res) {
 
         var texto = '';
         collection.forEach(e => {
-            texto += `[${e.name['#text']}](${url_game}${e['@_objectid']})\n`
+            texto += `[${e.name['#text']}]\n`
         });
 
 
